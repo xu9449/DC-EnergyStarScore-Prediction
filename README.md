@@ -5,4 +5,5 @@ We want to build a model that can predict the Energy Star Score of a building an
 What is a correlation coefficient?  
 how well they are related.  
 PPMC Pearson Product Momoent Correlation  
-it show the linear relationship between two sets of data  
+it show the linear relationship between two sets of data    
+
