@@ -77,4 +77,39 @@ There are 37 columns and we want to know each's meaning.  Then we found this pag
 ```  
 data.info()
 ```  
-![Data Info](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/2.datainfo.png)  
+![Data Info](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/2.datainfo.png)   
+**Missing Values**  
+  
+ We want to calculates the number of missing values and the percentage of the total values that are misssing for each column.  
+```  
+def missing_values_table(df):
+    # Total missing values
+    mis_val = df.isnull().sum()
+    
+    # Percentage of missing values
+    mis_val_percent = 100 * df.isnull().sum() / len(df)
+    
+    # table with the result 
+    mis_val_table = pd.concat([mis_val, mis_val_percent], axis=1)
+    
+    
+    mis_val_table_ren_columns = mis_val_table.rename(
+    columns = {0 : 'Missing Values', 1 : '% of Total Values'})
+    
+    
+    mis_val_table_ren_columns = mis_val_table_ren_columns[
+            mis_val_table_ren_columns.iloc[:,1] != 0].sort_values(
+        '% of Total Values', ascending=False).round(1)
+    
+    
+    print ("Your selected dataframe has " + str(df.shape[1]) + " columns.\n"      
+            "There are " + str(mis_val_table_ren_columns.shape[0]) +
+              " columns that have missing values.")
+    
+    
+    return mis_val_table_ren_columns  
+    ```  
+   ![missing](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/3_misssing%20value.png)    
+   We drop the Columns which missing rate higer than 50%. Normal it depends on the importances of the data set. Most of the people will choose around 85%. In this project, we choose 50%.  
+   we will remove 3 columns. 
+   
