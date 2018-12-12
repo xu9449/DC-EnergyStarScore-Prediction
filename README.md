@@ -60,3 +60,21 @@ from sklearn.model_selection import train_test_split
 
 ```  
 ### Data Cleaning and Formatting  
+**Load in the Data and Examine**     
+```
+def xlsx_to_csv_pd():
+    data_xls = pd.read_excel('2017DC.xlsx', index_col=0)
+    data_xls.to_csv('4.csv', encoding='utf-8')  
+if __name__ == '__main__':
+    xlsx_to_csv_pd()
+    data = pd.read_csv('4.csv')
+data.head()  
+```  
+![data.head()](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/1_Actual%20Data%20Looklike.png)
+      
+There are 37 columns and we want to know each's meaning.  Then we found this page, it tell us what each column's term stands for. [Link](https://doee.dc.gov/sites/default/files/dc/sites/ddoe/publication/attachments/Data%20Glossary%20for%20Energy%20and%20Water%20Performance%20Benchmarking%20Data%20Results_3.pdf)  
+**Data Types and Missing Values**  
+```  
+data.info()
+```  
+![Data Info](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/2.datainfo.png)  
