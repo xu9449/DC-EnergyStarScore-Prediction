@@ -143,6 +143,36 @@ print(iqr)
 ```  
 ![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/5.4%20site%20eui%20after%20move%20out%20outlier.png)  
 ### Looking for Relationships  
-We create a list of building with more than 50 measurements  
+We create a list of building with more than 50 measurements and plot it.  
+```  
+# Create a list of buildings with more than 100 measurements
+types = data.dropna(subset=['score'])
+types = types['primary_ptype_epa'].value_counts()
+types = list(types[types.values > 50].index)
+
+# Plot each building
+for b_type in types:
+    # Select the building type
+    subset = data[data['primary_ptype_epa'] == b_type]
+    
+    # Density plot of Energy Star scores
+    sns.kdeplot(subset['score'].dropna(),
+               label = b_type, shade = False, alpha = 0.8);
+    
+# label the plot
+plt.xlabel('Energy Star Score', size = 20); plt.ylabel('Density', size = 20); 
+plt.title('Density Plot of Energy Star Scores by Building Type', size = 28);
+
+```
 ![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/6_Density%20Plot%20of%20energy%20star%20scores%20by%20building%20type.png)  
-For the negative part in this image.
+  
+For the negative part in this image. It is because the Kernel Density Estimation  
+Kernel Density Estimation  
+Kernel  
+A special type of probability density function with the added property that it must be even.  Also, it has the properties:  
+non-negative  
+real valued  
+even  
+its definite integral over its support set must equal to 1  
+why we get the nagative values ?  
+A KDE replaces each observation xi by a little hill of probability density, of area 1/n , and the density estimate at a point x- is the sum of all the little density-hills, evaluated at x-.
