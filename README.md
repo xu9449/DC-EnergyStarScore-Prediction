@@ -123,3 +123,8 @@ def missing_values_table(df):
 We can see that the score 0 is disproporationate.   
 Then, we tried to plot the Site EUI(Site Energy Use Intensity)distribution which is the total energy use divided by the square footage of the building.  
 ![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/5_Site_eui_before%20move%20out%20outlier.png)
+The graph is incredibly skewed because of the presence of a few buldings with very high scores.  
+![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/5.1_find%20outlier.png)  
+![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/5.2_find%20outlier.png)  
+One building is clearly far above the rest   
+![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/5.3%20find%20outlier.png)  
