@@ -175,4 +175,20 @@ real valued
 even  
 its definite integral over its support set must equal to 1  
 why we get the nagative values ?  
-A KDE replaces each observation xi by a little hill of probability density, of area 1/n , and the density estimate at a point x- is the sum of all the little density-hills, evaluated at x-.
+A KDE replaces each observation xi by a little hill of probability density, of area 1/n , and the density estimate at a point x- is the sum of all the little density-hills, evaluated at x-.  
+  
+**Correlations between Features and Target**  
+![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/7_Values%20of%20Pearson%20Correlation%20Coefficient.png)  
+![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/8_Correlations%20between%20Features%20and%20score.png)   
+we take log and square root transformations of the numerical variables to account for possible non-linear relationships. Also, we use one-hot encode the two selected categoriacal variables . 
+  
+Then we plot the energy star score vs Site EUI  
+![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/9_Energy%20Star%20Score%20vs%20Site%20EUI%20scatterplot.png)  
+ 
+ 
+  
+**Pairs Plot**  
+![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/10_Pairs%20Plot%20of%20Energy%20Data.png)  
+### Feature Engineering and Selection  
+
+
