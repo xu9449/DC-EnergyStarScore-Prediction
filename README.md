@@ -70,6 +70,7 @@ if __name__ == '__main__':
     data = pd.read_csv('4.csv')
 data.head()  
 ```  
+  
 ![data.head()](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/1_Actual%20Data%20Looklike.png)
       
 There are 37 columns and we want to know each's meaning.  Then we found this page, it tell us what each column's term stands for. [Link](https://doee.dc.gov/sites/default/files/dc/sites/ddoe/publication/attachments/Data%20Glossary%20for%20Energy%20and%20Water%20Performance%20Benchmarking%20Data%20Results_3.pdf)  
@@ -81,6 +82,7 @@ data.info()
 **Missing Values**  
   
  We want to calculates the number of missing values and the percentage of the total values that are misssing for each column.  
+  
 ```  
 def missing_values_table(df):
     # Total missing values
@@ -108,8 +110,16 @@ def missing_values_table(df):
     
     
     return mis_val_table_ren_columns  
-    ```  
-   ![missing](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/3_misssing%20value.png)    
+  ```  
+     
+  
+![missing](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/3_misssing%20value.png)    
    We drop the Columns which missing rate higer than 50%. Normal it depends on the importances of the data set. Most of the people will choose around 85%. In this project, we choose 50%.  
    we will remove 3 columns. 
    
+### Exploratory Data Analysis  
+**Single Variable Plots**  
+![D](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/4_%20energy%20star%20score%20distribution.png)  
+We can see that the score 0 is disproporationate.   
+Then, we tried to plot the Site EUI(Site Energy Use Intensity)distribution which is the total energy use divided by the square footage of the building.  
+![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/5_Site_eui_before%20move%20out%20outlier.png)
