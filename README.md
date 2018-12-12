@@ -128,3 +128,21 @@ The graph is incredibly skewed because of the presence of a few buldings with ve
 ![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/5.2_find%20outlier.png)  
 One building is clearly far above the rest   
 ![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/5.3%20find%20outlier.png)  
+**Removing Outliers**  
+```
+
+first_quartile = data['site_eui'].describe()['25%']
+third_quartile = data['site_eui'].describe()['75%']
+iqr = third_quartile - first_quartile
+data = data[(data['site_eui'] > (first_quartile - 3 * iqr)) &
+            (data['site_eui'] < (third_quartile + 3 * iqr))]
+print(first_quartile)
+print(third_quartile)
+print(iqr)
+
+```  
+![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/5.4%20site%20eui%20after%20move%20out%20outlier.png)  
+### Looking for Relationships  
+We create a list of building with more than 50 measurements  
+![](https://github.com/xu9449/EnergyStarPrediction/blob/master/Part1_images/6_Density%20Plot%20of%20energy%20star%20scores%20by%20building%20type.png)  
+For the negative part in this image.
